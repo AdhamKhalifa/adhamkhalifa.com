@@ -43,8 +43,8 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+        position: relative;
     }
-
     #resume-button
     {
         color:#FFF;
@@ -72,7 +72,6 @@
     html {
   scroll-behavior:smooth;
 }
-
       </style>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -88,13 +87,11 @@
       <script type="text/javascript">    
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
-
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     document.getElementById("home-link").style.display = "block";
   } 
 }
-
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
   document.body.scrollTop = 0; // For Safari
@@ -182,11 +179,21 @@ function topFunction() {
           <br>
           <div id="resume">
       <div id="resume-text">
-          <center>
       <a href="resume.html" id="resume-button">Resume</a>
-</center>
       </div>
       </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
           <form method="POST" action="https://formspree.io/admin@adhamkhalifa.me">
   <input type="email" name="email" placeholder="email">
   <textarea name="message" placeholder="Message"></textarea>
