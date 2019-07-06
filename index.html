@@ -43,7 +43,6 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-        position: relative;
     }
     #resume-button
     {
@@ -58,6 +57,8 @@
         border-style: solid;
         font-size: 25pt;
         opacity: 0.6;
+        position: relative;
+        left: 8%;
     }
     
     #resume-button:hover{
@@ -194,11 +195,26 @@ function topFunction() {
           <br>
           <br>
           <br>
-          <form method="POST" action="https://formspree.io/admin@adhamkhalifa.me">
-  <input type="email" name="email" placeholder="email">
-  <textarea name="message" placeholder="Message"></textarea>
-  <button type="submit">Send</button>
-</form>
+
+                    <form method="POST" action="https://formspree.io/admin@adhamkhalifa.me">
+          <table class="tg">
+  <tr>
+    <th class="tg-0pky">email</th>
+    <th class="tg-0pky"><input type="email" name="email" placeholder="email"></th>
+  </tr>
+  <tr>
+    <td class="tg-0pky">message</td>
+    <td class="tg-0pky"><textarea name="message" placeholder="Message"></textarea></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"> <button type="submit">Send</button></td>
+  </tr>
+</table>
+          </form>
+
+          
+          
           </div>
     
   </body>
