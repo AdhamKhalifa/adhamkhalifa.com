@@ -1,6 +1,6 @@
 <?php
-
-$connection = mysqli_connect('adhamkhalifa.com', 'adhairog_patient', 'Patient334$');
+//Error connecting to databaseDatabase Not selectedNot inserted
+$connection = mysqli_connect('localhost', 'adhairog_patient', 'Patient334$');
 
 if(!$connection)
 {
