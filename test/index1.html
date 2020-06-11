@@ -152,8 +152,8 @@ crossorigin=""></script>
               <label for="inputGender">Gender</label>
               <select id="inputGender" class="form-control" name="Gender">
                 <option selected>Choose...</option>
-                <option>Male</option>
-                <option>Female</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
               </select>
 
             </div>
@@ -255,7 +255,7 @@ crossorigin=""></script>
 <div class="form-group col-5">
   <label for="example-date-input">Date</label>
     <div class="col-10">
-      <input class="form-control" type="date"  id="example-date-input" name="Date">
+      <input class="form-control" type="date"  id="example-date-input" name="DiagnosisDate">
     </div>
 </div>
 <div class="form-group col-3">
@@ -268,15 +268,62 @@ crossorigin=""></script>
   <label for="exampleTextarea">Example textarea</label>
       <textarea class="form-control" id="exampleTextarea" rows="3" name="Diseases"></textarea>
 
-<div class="form-group col-6">
+<div class="form-group col-5">
         <br>
-  <div class="form-check">
-  <label class="form-check-label">
-    <input type="checkbox" class="form-check-input" name="SwabResult">
-    I have a swab result
-  </label>
+        <label for="inputSwabResult">Do you have a Swab Result?</label>
+        <select class="form-control" id="SwabResult" name="SwabResult">
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
 </div>
-</div>
+<div class="col-auto my-1">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="autoSizingCheck2" onclick="getLocation()" name="location">
+        <label class="form-check-label" for="autoSizingCheck2">
+          Use my current location (recommended)
+        </label>
+        <input type="hidden" id="localization" name="Location">
+        <p id="test" style=""></p>
+      </div>
+    </div>
+
+
+
+<script>
+var x = document.getElementById("test");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition, showError);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude;
+  document.getElementById("localization") = x;
+
+}
+
+function showError(error) {
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+      x.innerHTML = "User denied the request for Geolocation."
+      break;
+    case error.POSITION_UNAVAILABLE:
+      x.innerHTML = "Location information is unavailable."
+      break;
+    case error.TIMEOUT:
+      x.innerHTML = "The request to get user location timed out."
+      break;
+    case error.UNKNOWN_ERROR:
+      x.innerHTML = "An unknown error occurred."
+      break;
+  }
+}
+</script>
 
 </div>
 </div>
@@ -285,7 +332,7 @@ crossorigin=""></script>
     <div class="form-group">
       <div class="form-check">
         <label class="form-check-label" for="gridCheck">
-          Your request to be added to the map will be reviewed. Most of the requests take 24 hours to be approved.
+          Your request to be added to the map will be reviewed as soon as possible.
         </label>
       </div>
     </div>
@@ -301,7 +348,7 @@ crossorigin=""></script>
 
   <script>
 
-  var mymap = L.map('mapid').setView([51.5, -0.09], 13);
+  var mymap = L.map('mapid').setView([41.378628, -72.104473], 12);
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
@@ -312,6 +359,11 @@ crossorigin=""></script>
   }).addTo(mymap);
 
 //Test marker
+
+  var marker = L.marker([51.5, -0.09]).addTo(mymap);
+  marker.bindPopup("<b>Hello world!</b><br>I am a popup.");
+
+
 
   </script>
 
