@@ -1,3 +1,7 @@
+html {
+  overflow-x:hidden;
+}
+
 img {
   margin:3px;
 }
@@ -80,33 +84,4 @@ img {
   border: 10px solid #202746;
   margin-top:50px;
   margin-bottom:50px;
-}
-
-/*
-.content div:nth-child(1) {
-  float: left;
-}
-
-.content div:nth-child(2) {
-  float: right;
-}
-
-.content div:nth-child(3) {
-  float: left;
-}
-
-.content div:nth-child(4) {
-  float: right;
-}
-
-.content div:nth-child(5) {
-  float: left;
-}
-
-.content div:nth-child(6) {
-  float: right;
-}
-
-.content div:nth-child(7) {
-  float: left;
 }
