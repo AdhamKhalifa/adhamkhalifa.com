@@ -9,15 +9,17 @@
     
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <style>
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
       body { font: 13px Helvetica, Arial; }
-      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
-      form input { border: 0; padding: 10px; width: 90%; margin-right: 0.5%; }
-      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+      form {background:#f1f3f8; padding: 15px; position: fixed; bottom: 10px; width: 100%;}
+      form input { border: 0; padding: 10px; width: 90%; margin-right: 0.5%; margin:10px;}
+      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; margin:10px;}
       #messages { list-style-type: none; margin: 0; padding: 0; }
       #messages li { padding: 5px 10px; }
       #messages li:nth-child(odd) { background: #eee; }
@@ -28,9 +30,43 @@
 <body>
 
 
+<center>
+
+    <h2>Welcome to the chat!</h2>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Start chat!
+      </button>
+</center>
+
+   
+      
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Welcome to chat! Please enter your name</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">@</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="n"  autocomplete="off" placeholder="Name">
+                  </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" id="done" data-dismiss="modal">Done</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
     <script src="/socket.io/socket.io.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script>
 
         $(function () {
@@ -48,18 +84,25 @@
         });
       </script>
 <ul id="messages"></ul>
-    <form action="" id="myForm">
-        <input id="n" autocomplete="off" placeholder="name"/>
-      <input id="m" autocomplete="off" placeholder="message"/><button>Send</button>
+<div class="d-flex justify-content-center">
+    <form action="" id="myForm" onsubmit="myFunction()" style="width:50%;">
+        <div class="input-group">
+            
+            <textarea id="m" autocomplete="off" placeholder="Message" class="form-control" aria-label="With textarea"></textarea>
+          </div><button class="btn btn-primary">Send</button>
     </form>
+</div>
 
     <script>
 
-        
-$("#myForm").submit(function(e) {
-    e.preventDefault();
-    $(":checked").addClass("someClass");
+function myFunction() {
+    $("#myForm").submit(function(e) {
+        document.getElementById("n").style.display = "none";
 });
+}
+
+        
+
 
     </script>
 </body>
