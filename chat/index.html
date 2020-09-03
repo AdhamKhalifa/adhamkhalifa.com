@@ -59,7 +59,7 @@
                   </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" id="done" data-dismiss="modal">Done</button>
+              <button type="button" class="btn btn-secondary" id="done" data-dismiss="modal" onclick="myFunction()">Done</button>
             </div>
           </div>
         </div>
@@ -89,19 +89,17 @@
         <div class="input-group">
             
             <textarea id="m" autocomplete="off" placeholder="Message" class="form-control" aria-label="With textarea"></textarea>
-          </div><button class="btn btn-primary">Send</button>
+          </div><button class="btn btn-primary" id="send" disabled>Send</button>
     </form>
 </div>
 
     <script>
 
 function myFunction() {
-    $("#myForm").submit(function(e) {
-        document.getElementById("n").style.display = "none";
-});
+    document.getElementById("send").disabled = false;
+
 }
 
-        
 
 
     </script>
