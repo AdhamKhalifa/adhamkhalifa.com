@@ -42,21 +42,88 @@
 
 </header>
 <main role="main">
-  <div class="jumbotron jumbotron-fluid">
+  <div class="jumbotron jumbotron-fluid" id="gradient">
+
+    <script>
+
+      
+      var colors = new Array(
+        [52,94,131],
+        [80,101,148],
+        [136,193,215],
+        [177,116,169],
+        [0,146,177],
+        [159,172,189]);
+
+      var step = 0;
+      //color table indices for: 
+      // current color left
+      // next color left
+      // current color right
+      // next color right
+      var colorIndices = [0,1,2,3];
+
+      //transition speed
+      var gradientSpeed = 0.003;
+
+      function updateGradient()
+      {
+        
+        if ( $===undefined ) return;
+        
+      var c0_0 = colors[colorIndices[0]];
+      var c0_1 = colors[colorIndices[1]];
+      var c1_0 = colors[colorIndices[2]];
+      var c1_1 = colors[colorIndices[3]];
+
+      var istep = 1 - step;
+      var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
+      var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
+      var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
+      var color1 = "rgb("+r1+","+g1+","+b1+")";
+
+      var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
+      var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
+      var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
+      var color2 = "rgb("+r2+","+g2+","+b2+")";
+
+      $('#gradient').css({
+        background: "-webkit-gradient(linear, left top, right top, from("+color1+"), to("+color2+"))"}).css({
+          background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"});
+        
+        step += gradientSpeed;
+        if ( step >= 1 )
+        {
+          step %= 1;
+          colorIndices[0] = colorIndices[1];
+          colorIndices[2] = colorIndices[3];
+          
+          //pick two new target color indices
+          //do not pick the same as the current one
+          colorIndices[1] = ( colorIndices[1] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
+          colorIndices[3] = ( colorIndices[3] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
+          
+        }
+      }
+
+      setInterval(updateGradient,10);
+
+    </script>
+
     <div class="container">
       <img src="img/pic.jpg" class="rounded mx-auto d-block img-thumbnail" alt="Adham Khalifa">
-      <p class="lead">Hi! I'm Adham Khalifa! I am a sophomore Computer Science student at <a target="_blank" href="https://conncoll.edu/">Connecticut College 🐫</a>.
+      <p class="lead" style="color:aliceblue;">Hi! I'm Adham Khalifa! I am a sophomore Computer Science student at <a target="_blank" href="https://conncoll.edu/" style="color:aliceblue;">Connecticut College 🐫</a>.
         I enjoy coding anything that can solve problems or make life easier.
         My top interests are vision and voice-based application development.
-        In high school, I founded the Egyptian chapter of <a target="_blank" href="https://hackclub.com/">Hack Club</a> to spread the culture of high school coding clubs all over Egypt.</p>
+        In high school, I founded the Egyptian chapter of <a target="_blank" href="https://hackclub.com/"  style="color:aliceblue;">Hack Club</a> to spread the culture of high school coding clubs all over Egypt.</p>
         <ul class="list-inline">
-      <li class="list-inline-item"><a target="_blank"  href="mailto:adham@adhamkhalifa.com" class="stretched-link">Email</a></li>
+      <li class="list-inline-item"><a target="_blank"  href="mailto:adham@adhamkhalifa.com" class="stretched-link"  style="color:aliceblue;">Email</a></li>
       <li class="list-inline-item"><a target="_blank"  href="https://github.com/AdhamKhalifa" class="stretched-link"><img src="img/github.png" width="32px" height="32px"/></a></li>
       <li class="list-inline-item"><a target="_blank"  href="https://www.linkedin.com/in/adhamkhalifa/" class="stretched-link"><img src="img/linkedin.png" width="32px" height="32px"/></a></li>
     </ul>
     </div>
   </div>
-  <section class="jumbotron text-center" style="background-color:#e9ecef;">
+  <section class="jumbotron text-center" style="background-color:#e9ecef; border-radius:0; border-top:3px solid #3C4856;">
     <div class="container">
       <h1>Projects and Experience</h1>
     </div>
@@ -77,7 +144,7 @@
           </div>
         </div>
         <!--StuTech -->
-        <div class="col-md-4" data-aos="fade-left">
+        <div class="col-md-4" data-aos="fade-right">
           <div class="card mb-4 shadow-sm">
             <a href="https://grants.stutech.org/" target="_blank"><img class="img-border" src="img/stutech/news.png" width="314px" height="215px"/></a>
             <div class="card-body">
@@ -119,7 +186,7 @@
         </div>
 
         <!--DKSSF-->
-        <div class="col-md-4" data-aos="fade-right">
+        <div class="col-md-4" data-aos="fade-left">
           <div class="card mb-4 shadow-sm">
             <a href="https://www.amideast.org/news-resources/newsroom/meet-the-dkssf-class-of-2019" target="_blank"><img class="img-border" src="img/dkssf/amideast.gif" width="314px" height="157px"/></a>
             <div class="card-body">
