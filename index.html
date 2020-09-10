@@ -5,238 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Adham Khalifa's personal website.">
     <meta name="author" content="Adham Khalifa">
-    <title>Adham Khalifa</title>
+    <title>Chat Demo</title>
     
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <!--favicon-->
-    <link rel="shortcut icon" type="image/png" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/robot-face_1f916.png"/>
-
-    <!--AOS-->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 13px Helvetica, Arial; }
+      form {background:#f1f3f8; padding: 15px; position: fixed; bottom: 10px; width: 100%;}
+      form input { border: 0; padding: 10px; width: 90%; margin-right: 0.5%; margin:10px;}
+      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; margin:10px;}
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages li { padding: 5px 10px; }
+      #messages li:nth-child(odd) { background: #eee; }
+
     </style>
-    <!-- Custom styles for this template -->
-    <link href="album.css" rel="stylesheet">
-  </head>
-  <body>
-    <header>
 
-</header>
-<main role="main">
-  <div class="jumbotron jumbotron-fluid" id="gradient">
+</head>
+<body>
 
-    <script>
 
+<center>
+
+    <h2>Welcome to the chat!</h2>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Start chat!
+      </button>
+</center>
+
+   
       
-      var colors = new Array(
-        [52,94,131],
-        [80,101,148],
-        [136,193,215],
-        [177,116,169],
-        [0,146,177],
-        [159,172,189]);
-
-      var step = 0;
-      //color table indices for: 
-      // current color left
-      // next color left
-      // current color right
-      // next color right
-      var colorIndices = [0,1,2,3];
-
-      //transition speed
-      var gradientSpeed = 0.003;
-
-      function updateGradient()
-      {
-        
-        if ( $===undefined ) return;
-        
-      var c0_0 = colors[colorIndices[0]];
-      var c0_1 = colors[colorIndices[1]];
-      var c1_0 = colors[colorIndices[2]];
-      var c1_1 = colors[colorIndices[3]];
-
-      var istep = 1 - step;
-      var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
-      var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
-      var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
-      var color1 = "rgb("+r1+","+g1+","+b1+")";
-
-      var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
-      var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
-      var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
-      var color2 = "rgb("+r2+","+g2+","+b2+")";
-
-      $('#gradient').css({
-        background: "-webkit-gradient(linear, left top, right top, from("+color1+"), to("+color2+"))"}).css({
-          background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"});
-        
-        step += gradientSpeed;
-        if ( step >= 1 )
-        {
-          step %= 1;
-          colorIndices[0] = colorIndices[1];
-          colorIndices[2] = colorIndices[3];
-          
-          //pick two new target color indices
-          //do not pick the same as the current one
-          colorIndices[1] = ( colorIndices[1] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
-          colorIndices[3] = ( colorIndices[3] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
-          
-        }
-      }
-
-      setInterval(updateGradient,10);
-
-    </script>
-
-    <div class="container">
-      <img src="img/pic.jpg" class="rounded mx-auto d-block img-thumbnail" alt="Adham Khalifa" width="60%">
-      <p class="lead" style="color:aliceblue;">Hi! I'm Adham Khalifa! I am a sophomore Computer Science student at <a target="_blank" href="https://conncoll.edu/" style="color:aliceblue;">Connecticut College 🐫</a>.
-        I enjoy coding anything that can solve problems or make life easier.
-        My top interests are vision and voice-based application development.
-        In high school, I founded the Egyptian chapter of <a target="_blank" href="https://hackclub.com/"  style="color:aliceblue;">Hack Club</a> to spread the culture of high school coding clubs all over Egypt.</p>
-        <ul class="list-inline">
-      <li class="list-inline-item"><a target="_blank"  href="mailto:adham@adhamkhalifa.com" class="stretched-link"  style="color:aliceblue;">Email</a></li>
-      <li class="list-inline-item"><a target="_blank"  href="https://github.com/AdhamKhalifa" class="stretched-link"><img src="img/github.png" width="32px" height="32px"/></a></li>
-      <li class="list-inline-item"><a target="_blank"  href="https://www.linkedin.com/in/adhamkhalifa/" class="stretched-link"><img src="img/linkedin.png" width="32px" height="32px"/></a></li>
-    </ul>
-    </div>
-  </div>
-  <section class="jumbotron text-center" style="background-color:#eff0f1; border-radius:0; border-top:3px solid #3C4856;">
-    <div class="container">
-      <h1>Projects and Experience</h1>
-    </div>
-  </section>
-  <div class="album py-5 bg-light"  style="background-color:#FFF!important">
-    <div class="container">
-      <div class="row">
-        <!--Hack Club -->
-        <div class="col-md-4" data-aos="fade-right">
-          <div class="card mb-4 shadow-sm">
-            <a href="https://hackclub.com/" target="_blank"><img class="img-border" src="img/hackclub/logo.jpg" width="314px" height="215px"/></a>
-            <div class="card-body">
-              <div class="card-title">Hack Club Egypt</div>
-              <p class="text"> I indepently launched Hack Club Egypt, the Egyptian chapter of Hack Club to create a coding club at every school.  It's now located in multiple STEM high schools in Egypt.</p>
-              <div class="d-flex justify-content-between align-items-center">
-              </div>
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Welcome to chat! Please enter your name</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
-          </div>
-        </div>
-        <!--StuTech -->
-        <div class="col-md-4" data-aos="fade-right">
-          <div class="card mb-4 shadow-sm">
-            <a href="https://grants.stutech.org/" target="_blank"><img class="img-border" src="img/stutech/news.png" width="314px" height="215px"/></a>
-            <div class="card-body">
-              <div class="card-title">StuTech STEM grant</div>
-              <p class="text">StuTech is a non-profit giving money to high schoolers creating innovative & impactful STEM projects. I was one of 3 chosen high school students to receive the grant.</p>
-              <div class="d-flex justify-content-between align-items-center">
-              </div>
+            <div class="modal-body">
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">@</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="n"  autocomplete="off" placeholder="Name">
+                  </div>
             </div>
-          </div>
-        </div>
-
-
-        <!--Beau Biden -->
-        <div class="col-md-4" data-aos="fade-right">
-          <div class="card mb-4 shadow-sm">
-            <a href="https://www.beaubidenfoundation.org/" target="_blank"><img class="img-border" src="img/beaubiden/desktop.PNG"  width="314px" height="215px"/></a>
-            <div class="card-body">
-              <div class="card-title">Beau Biden Foundation</div>
-              <p class="text">Beau Biden Foundation is a non-profit working in the children protection fields. I built their new website to enhance their blogging controls and feed techniques.</p>
-              <div class="d-flex justify-content-between align-items-center">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!--YYGS -->
-        <div class="col-md-4" data-aos="fade-left">
-          <div class="card mb-4 shadow-sm">
-            <a href="http://yygsblog.blogspot.com/2018/10/i-used-to-think-about-problems-only-in.html" target="_blank"><img class="img-border" src="img/yygs/adham.png" /></a>
-            <div class="card-body">
-              <div class="card-title">YYGS blogpost reflection</div>
-              <p class="text">YYGS is an unparalleled academic and leadership program at Yale University. I went to the Sustainable Development and Entrepreneurship program on a full tuition and travel scholarship.
-
-</p>
-              <div class="d-flex justify-content-between align-items-center">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!--DKSSF-->
-        <div class="col-md-4" data-aos="fade-left">
-          <div class="card mb-4 shadow-sm">
-            <a href="https://www.amideast.org/news-resources/newsroom/meet-the-dkssf-class-of-2019" target="_blank"><img class="img-border" src="img/dkssf/amideast.gif" width="314px" height="157px"/></a>
-            <div class="card-body">
-              <div class="card-title">DKSSF Class of 2019</div>
-              <p class="text">I received a travel and books scholarship from Amideast as a part of the Diana Kamal Scholarship Search Fund (DKSSF). DKSSF assists highly qualified Arab students from underserved populations in the Middle East and North Africa who seek to pursue their undergraduate studies in the United States.</p>
-              <div class="d-flex justify-content-between align-items-center">
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--Robotics-->
-        <div class="col-md-4" data-aos="fade-left">
-          <div class="card mb-4 shadow-sm">
-            <a href="robotics.html"><img class="img-border" src="img/robotics/thumb.jpg" width="314px" height="257px"/></a>
-            <div class="card-body">
-              <div class="card-title">EV3 Robots</div>
-              <p class="text">I built some robots using Lego EV3 for a robotics class. Find their videos here.</p>
-              <div class="d-flex justify-content-between align-items-center">
-              </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" id="done" data-dismiss="modal" onclick="myFunction()">Done</button>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
-</main>
 
-<footer class="text-muted">
-  <div class="container">
-   <p>&copy;<script type = "text/javascript">
-         var dt = new Date();
-         document.write(dt.getFullYear() );
-      </script> Adham Khalifa All rights reserved.</p>
-  </div>
-</footer>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.js"></script>
-    
-      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-      <script>
-        AOS.init();
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
 
-        AOS.init({
-  duration: 600, // values from 0 to 3000, with step 50ms
-});
-
+        $(function () {
+          var socket = io();
+          $('form').submit(function(e){
+            e.preventDefault(); // prevents page reloading
+            socket.emit('chat message', $('#m').val());
+            $('#m').val('');
+            return false;
+          });
+          socket.on('chat message', function(msg){
+            $('#messages').append($('#n').val());
+            $('#messages').append($('<li>').text(msg));
+          });
+        });
       </script>
+<ul id="messages"></ul>
+<div class="d-flex justify-content-center">
+    <form action="" id="myForm" onsubmit="myFunction()" style="width:50%;">
+        <div class="input-group">
+            
+            <textarea id="m" autocomplete="off" placeholder="Message" class="form-control" aria-label="With textarea"></textarea>
+          </div><button class="btn btn-primary" id="send" disabled>Send</button>
+    </form>
+</div>
 
-      
+    <script>
 
-    </body>
+function myFunction() {
+    document.getElementById("send").disabled = false;
+
+}
+
+
+
+    </script>
+</body>
+
 </html>

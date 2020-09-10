@@ -1,12 +1,24 @@
 {
-    "name": "socket-chat-example",
-    "version": "0.0.1",
-    "description": "my first socket.io app",
-    "dependencies": {
-        "express": "^4.17.1",
-        "socket.io": "^2.3.0"
-    },
-    "scripts": {
-        "start": "node index.js"
-    }
+  "name": "adham-khalifa",
+  "version": "1.0.0",
+  "description": "my first socket.io app",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdhamKhalifa/adhamkhalifa.com.git"
+  },
+  "author": "Adham Khalifa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdhamKhalifa/adhamkhalifa.com/issues"
+  },
+  "homepage": "https://github.com/AdhamKhalifa/adhamkhalifa.com#readme"
 }
