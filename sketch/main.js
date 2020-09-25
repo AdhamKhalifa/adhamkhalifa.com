@@ -23,6 +23,7 @@ function setup() {
   });
   canvas.mousePressed(drawPoint);
   
+  
   canvas.mouseMoved(function () {
     if (mouseIsPressed) {
       drawPoint();
