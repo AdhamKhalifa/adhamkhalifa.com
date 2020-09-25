@@ -11,3 +11,5 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+
+var pointsData = firebase.database().ref()
