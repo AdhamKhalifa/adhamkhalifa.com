@@ -15,10 +15,10 @@ var pointsData = firebase.database().ref();
 var points = [];
 
 function setup() {
-  
+
   var canvas = createCanvas(displayWidth-100, displayHeight-100);
   background(255);
-  strokeWeight(6);
+  strokeWeight(7);
   fill(0);
   pointsData.on("child_added", function (point) {
     points.push(point.val());
