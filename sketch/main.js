@@ -15,14 +15,14 @@ var pointsData = firebase.database().ref();
 var points = [];
 
 function setup() {
-  var canvas = createCanvas(400, 400);
+  var canvas = createCanvas(800, 800);
   background(255);
   fill(0);
   pointsData.on("child_added", function (point) {
     points.push(point.val());
   });
   canvas.mousePressed(drawPoint);
-  
+
   
   canvas.mouseMoved(function () {
     if (mouseIsPressed) {
