@@ -15,7 +15,7 @@ var pointsData = firebase.database().ref();
 var points = [];
 
 function setup() {
-  var canvas = createCanvas(600, 600);
+  var canvas = createCanvas(displayWidth-100, displayHeight-100);
   background(255);
   fill(0);
   pointsData.on("child_added", function (point) {
