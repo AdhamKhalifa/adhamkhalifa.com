@@ -21,13 +21,13 @@ function setup() {
     points.push(point.val());
   });
   canvas.mousePressed(drawPoint);
-  /*
+  
   canvas.mouseMoved(function () {
     if (mouseIsPressed) {
       drawPoint();
     }
   });
-  */
+  
 }
 
 function draw() {
@@ -39,8 +39,7 @@ function draw() {
 }
 
 function drawPoint() {
-  alert("DON'T TOUCH THE MASTERPIECE! NO COLLABORATION!");
-  //pointsData.push({x: mouseX, y: mouseY});
+  pointsData.push({x: mouseX, y: mouseY});
   return false;
 }
 
@@ -53,9 +52,8 @@ function saveDrawing() {
 $("#clearDrawing").on("click", clearDrawing);
 
 function clearDrawing() {
-  alert("HOW DARE YOU!");
-  /*
+  
   pointsData.remove();
   points = [];
-  */
+  
 }
