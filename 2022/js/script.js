@@ -43,7 +43,7 @@ TxtType.prototype.tick = function() {
     this.el.innerHTML = '<span class="mid-heading"> I am a '+this.txt+'</span>';
 
     var that = this;
-    var delta = 150 - Math.random() * 100;
+    var delta = 200 - Math.random() * 100;
 
     if (this.isDeleting) { delta /= 2; }
 
@@ -58,7 +58,7 @@ TxtType.prototype.tick = function() {
 
     setTimeout(function() {
     that.tick();
-    }, 100);
+    }, delta);
 };
 
 window.onload = function() {
