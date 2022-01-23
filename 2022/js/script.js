@@ -141,58 +141,21 @@ setInterval(updateGradient,10);
 
 
 // -------------------- Smooth scroll --------------------
-$(function() {
-    $('a[href*="#about"]:not([href="#"])').click(function() {
-      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-        if (target.length) {
-          $('html, body').animate({
-            scrollTop: target.offset().top
-          }, 500);
-          return false;
-        }
-      }
-    });
 
-    $('a[href*="#experience"]:not([href="#"])').click(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-          if (target.length) {
-            $('html, body').animate({
-              scrollTop: target.offset().top
-            }, 500);
-            return false;
-          }
-        }
-      });
-
-    $('a[href*="#projects"]:not([href="#"])').click(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-          if (target.length) {
-            $('html, body').animate({
-              scrollTop: target.offset().top
-            }, 500);
-            return false;
-          }
-        }
-      });
-
-    $('a[href*="#about"]:not([href="#"])').click(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-          if (target.length) {
-            $('html, body').animate({
-              scrollTop: target.offset().top
-            }, 500);
-            return false;
-          }
-        }
-      });
+$(document).ready(function() {
+    $('.scroll-to-anchor').on('click', scrollToAnchor);
   });
-
   
+  scrollToAnchor = function() {
+   event.preventDefault();
+  
+   var anchor = $(this).attr('href'),
+       offset = $(anchor).offset();
+  
+    $('html, body').animate({
+      'scrollTop': offset.top + 'px'
+    }, 500);
+  
+  
+    return false;
+  };

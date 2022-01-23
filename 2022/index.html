@@ -36,6 +36,9 @@
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
   </head>
   <body>
       <!-- Header Start -->
@@ -43,6 +46,10 @@
         <!-- Navbar Start -->
 
     </header>
+   <!-- <ul class="social">
+        <li><a href="https://github.com/AdhamKhalifa"><i class="fab fa-github"></i></li>
+        <li><a href="https://linkedin.com/AdhamKhalifa"><i class="fab fa-linkedin"></i></li>
+    </ul> -->
     <div id="main">
         <div class="navbar navbar-expand-lg">
             <div class="container-fluid">
@@ -52,17 +59,19 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link code-text hover-underline-animation" href="#about">About</a>
+                    <a class="nav-link code-text scroll-to-anchor hover-underline-animation" href="#about">About</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link code-text hover-underline-animation" href="#experience">Experience</a>
+                    <a class="nav-link code-text scroll-to-anchor hover-underline-animation" href="#experiences">Experience</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link code-text hover-underline-animation" href="#projects">Work</a>
+                    <a class="nav-link code-text scroll-to-anchor hover-underline-animation" href="#projects">Work</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link code-text hover-underline-animation" href="#">Contact</a>
+                    <a class="nav-link code-text scroll-to-anchor hover-underline-animation" href="#contact">Contact</a>
                   </li>
+                  <li clas="nav-item">
+                    <a class="nav-link code-text hover-underline-animation" href="https://adhamkhalifa.com/AdhamKhalifa_resume.pdf">Resume</a>
                 </ul>
               </div>
             </div>
@@ -132,20 +141,19 @@
         <br><br><br><br><br><br><br><br><br><br>
         <!-- Experience -->
         <script type="text/javascript" src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.1/js/bootstrap.min.js"></script>
-        <section id="experience">
+        <section id="experiences">
             <div class="container">
                 <h2 class="experience-heading">Where I've Worked</h2>
                 <!-- role="tablist" aria-orientation="vertical" -->
-            </div>
             <div class="row">
-                <div class="col-4">
+                <div class="col">
                   <div class="list-group" id="list-tab" role="tablist">
                     <a class="list-group-item list-group-item-action bg-transparent active" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home">Yale Center for Research Computing</a>
                     <a class="list-group-item list-group-item-action bg-transparent" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile">Summer Research</a>
                     <a class="list-group-item list-group-item-action bg-transparent" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages">Beau Biden Foundation</a>
                   </div>
                 </div>
-                <div class="col-8">
+                <div class="col">
                   <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
                         <h4><b>Software Engineer</b> <b class="at">@</b> <b><a href="#" class="hover-underline-animation">Yale Center for Research Computing</a></b></h4>
@@ -201,6 +209,7 @@
                   </div>
                 </div>
               </div>
+            </div>
         </section>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <!-- Projects -->
@@ -236,15 +245,19 @@
 
         <!-- Contact -->
         <section id="contact">
-            <div class="container">
-                <h2 class="contact-heading">Contact Me</h2>
-                <div class="row">
-                    <div class="col">
-                        <form action="mailto:adham@adhamkhalifa.com" method="post">
-                            
-                        </form>
-                    </div>
+            <div class="container center-div">
+                <h2 class="contact-heading">Get In Touch</h2>
+                <p class="contact-description lead">
+                    If you have any questions or comments, feel free to contact me.
+                </p>
+                <a class="email-link code-text" href="mailto:akhalifae@conncoll.edu" target="_blank">Say Hello</a>
+            </div>
         </section>
+        <footer class="center-div">
+            <h4 class="footer-text lead">
+                Made with <i class="fas fa-heart"></i> by Adham Khalifa
+            </h4>
+        </footer>
     </div>
     </body>
 </html>

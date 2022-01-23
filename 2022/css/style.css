@@ -10,6 +10,27 @@ html {
       font-weight:600;
   }
 
+  .social {
+    display:flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    margin:20px;
+    padding:0px;
+    list-style:none;
+    position: fixed;
+    bottom: 50%;
+  }
+
+  .social li a{
+    display:inline-block;
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+    color: inherit;
+    position: relative;
+    transition:cubic-bezier(1, 0, 0, 1);
+  }
+
   .code-text {
     font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
   }
@@ -480,6 +501,40 @@ opacity:1;
   margin-top:50px;
   margin-bottom:50px;
 }
+
+.center-div {
+  text-align:center;
+}
+
+.contact-description {
+  line-height: 2.5;
+}
+
+.email-link {
+  color:aquamarine;
+  background:transparent;
+  border: 1px solid aquamarine;
+  border-radius: 5px;
+  padding:1.25rem 1.75rem;
+  font-size: clamp(12pt, 8vw, 13pt);
+  line-height: 10;
+  text-decoration: none;
+  cursor: pointer;
+  transition:cubic-bezier(0.075, 0.82, 0.165, 1);
+  margin-top:50px;
+  text-decoration: none;
+}
+
+.email-link:hover {
+  background:rgb(127, 255, 212, .5);
+  text-decoration: none;
+}
+
+.email-link a:hover {
+  color: aquamarine;
+}
+
+
 
 .jumbotron {
   padding-top: 3rem;
