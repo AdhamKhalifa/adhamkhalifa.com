@@ -459,6 +459,13 @@ opacity:1;
   color: #ccd6f6;
 }
 
+.contact-heading {
+  color: #ccd6f6;
+  margin: 0px;
+  font-size: clamp(26px, 8vw, 30px);
+  display:block;
+  line-height:2.5;
+}
 
 .content {
   display: block;
