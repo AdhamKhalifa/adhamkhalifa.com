@@ -19,8 +19,15 @@ html {
     padding:0px;
     list-style:none;
     position: fixed;
-    bottom: 50%;
+    bottom: 20%;
   }
+
+  .social li {
+    color: aliceblue;
+    font-size: 1em;
+    margin: 5px;
+  }
+
 
   .social li a{
     display:inline-block;
@@ -29,6 +36,27 @@ html {
     color: inherit;
     position: relative;
     transition:cubic-bezier(1, 0, 0, 1);
+  }
+
+  .email-right {
+    display:flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    writing-mode: vertical-rl;
+    position: fixed;
+    bottom: 20%;
+    right: 10px;
+    margin: 10px;
+    text-decoration: none;
+    color: aliceblue;
+  }
+
+  .email-right:hover {
+    color: aquamarine;
+    margin-bottom: 15px;
+    transition: 300ms ease-in-out;
+    text-decoration: none;
   }
 
   .code-text {
