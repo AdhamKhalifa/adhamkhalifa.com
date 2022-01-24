@@ -9,7 +9,6 @@ html {
   h2 {
       font-weight:600;
   }
-
   .social {
     display:flex;
     flex-direction: column;
@@ -57,6 +56,57 @@ html {
     margin-bottom: 15px;
     transition: 300ms ease-in-out;
     text-decoration: none;
+  }
+
+  #social-footer {
+    text-align: center;
+  }
+
+  .social-hz {
+    display: inline;
+   }
+
+  .social-hz li{
+    display: inline;
+    color: aliceblue;
+    font-size: 1em;
+    margin: 5px;
+  }
+
+  .social-hz li a {
+    color: aliceblue;
+  }
+
+  .social-hz li a:hover{
+    margin-bottom: 30px;
+    transition: 300ms ease-in-out;
+    text-decoration: none;
+  }
+
+  .email-footer {
+    display: inline;
+    color: aliceblue;
+  }
+
+  .email-footer:hover {
+    color: aquamarine;
+    text-decoration: none;
+  }
+
+  /* ---- Media Queries ---- */
+  @media (max-width: 767.6px) {
+    .social {
+      display: none;  
+    }
+    .email-right {
+      display: none;
+    }
+  }
+
+  @media (min-width: 768px) {
+    #social-footer {
+      display: none;
+    }
   }
 
   .code-text {
@@ -150,10 +200,18 @@ html {
     color: #ccd6f6;
  }
 
- .nav-link:hover {
+ .navbar-dark .navbar-nav .nav-link:hover {
    color: aquamarine;
  }
 
+ .navbar-toggler {
+   color: aliceblue;
+    background: transparent;
+ }
+
+ .navbar-toggler-icon {
+    color: white;
+ }
 
   @media (min-width: 768px) {
     .bd-placeholder-img-lg {
