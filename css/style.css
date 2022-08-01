@@ -655,3 +655,63 @@ footer {
 footer p {
   margin-bottom: .25rem;
 }
+
+
+/* ---------------------------------------- Cashify ---------------------------------------- */
+
+
+.screenshot-thumb {
+  float:right;
+  opacity: 0.8;
+  display:block;
+  border: 2px solid #ccd6f6;
+  top: 20px;
+  left: 20px;
+  z-index: -1;
+}
+
+@media (max-width: 360px) {
+.screenshot-thumb {
+    min-width:50px;
+}
+}
+
+@media (min-width: 361px) and (max-width: 480px) {
+.screenshot-thumb {
+    min-width:50px;
+}
+}
+
+@media (min-width: 481px) and (max-width: 575.98px) {
+.screenshot-thumb {
+    min-width:150px;
+}
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+.screenshot-thumb {
+    min-width:200px;
+}
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .screenshot-thumb {
+        min-width:250px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .screenshot-thumb {
+        min-width:300px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .screenshot-thumb {
+        max-width:250px;
+    }
+}
+
+.screenshot-thumb:hover {
+  opacity:1;
+}
