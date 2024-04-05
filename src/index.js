@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css'; // Make sure to include your CSS
+import './index.css';
+import './scripts/navbar';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

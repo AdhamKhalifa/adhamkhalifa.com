@@ -4,6 +4,7 @@ import AboutSection from './AboutSection';
 import Footer from './Footer';
 import './App.css'; // Your main CSS file
 
+
 function App() {
   return (
     <div>
@@ -15,3 +16,6 @@ function App() {
 }
 
 export default App;
+
+
+
