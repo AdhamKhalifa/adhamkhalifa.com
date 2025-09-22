@@ -58,7 +58,7 @@ const Intro = () => {
           <div className="space-y-4">
             <p className="section-subtitle animate-fade-in">Hi, my name is</p>
             <h1 className="text-6xl md:text-8xl font-bold text-white mb-4 animate-fade-in-up">
-              Adham Khalifa.
+              Adham.
             </h1>
           </div>
 
