@@ -24,13 +24,6 @@ const About = () => {
                 Building the Future, One Line at a Time
               </h2>
             </div>
-
-            <div className="space-y-6 text-lg text-slate-300 leading-relaxed">
-              <p>
-                Hello! I'm Adham, a software engineer with a passion for
-                creating innovative solutions that solve real-world problems.
-              </p>
-            </div>
           </div>
 
           {/* Skills */}
